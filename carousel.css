@@ -1,0 +1,125 @@
+ul {
+  padding: 0;
+}
+
+.carousel {
+  display: grid;
+  gap: 30px;
+  grid-auto-flow: column;
+  scrollbar-width: none;
+  scroll-snap-type: inline mandatory;
+  overflow-x: auto;
+  padding: 20px;
+  scroll-behavior: smooth;
+  anchor-name: --carousel;
+
+  &::after,
+  &::before {
+    content: "";
+    display: block;
+    inline-size: 300px;
+  }
+
+  scroll-marker-group: after;
+
+  &::scroll-marker-group {
+    display: flex;
+    gap: 10px;
+    justify-content: safe center;
+  }
+
+  &::scroll-button(*) {
+    position: fixed;
+    position-anchor: --carousel;
+    background-color: transparent;
+    border: none;
+    width: 40px;
+    border-radius: 50%;
+    aspect-ratio: 1;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+  }
+
+  &::scroll-button(left) {
+    content: "\2190";
+    position-area: bottom span-right;
+    margin-left: 20px;
+  }
+
+  &::scroll-button(right) {
+    content: "\2192";
+    position-area: bottom span-left;
+    margin-right: 20px;
+  }
+}
+
+.item {
+  list-style: none;
+  scroll-snap-align: center;
+  container-type: scroll-state;
+  scroll-snap-stop: always;
+
+  &::scroll-marker {
+    content: "";
+    display: block;
+    width: 15px;
+    height: 15px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid #444;
+    transition: all 300ms;
+  }
+}
+
+.item::scroll-marker:target-current {
+  background-color: #444;
+}
+
+.card {
+  display: grid;
+  width: 500px;
+  opacity: 0.5;
+  background-color: #fff;
+  aspect-ratio: 1;
+  border-radius: 10px;
+  transition: all 300ms;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+
+  &::after {
+    content: attr(title);
+    display: flex;
+    width: 100%;
+    height: 70px;
+    color: #fefefe;
+    background: linear-gradient(to top, rgb(0 0 0 / 90%), transparent);
+    position: absolute;
+    bottom: 0;
+    scale: 1 0;
+    transform-origin: bottom;
+    transition: scale 300ms;
+    border-radius: 10px;
+    justify-content: center;
+    align-items: end;
+    padding-bottom: 20px;
+  }
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@container scroll-state(snapped: x) {
+  .card {
+    opacity: 1;
+    box-shadow: var(--shadow);
+
+    &::after {
+      scale: 1;
+    }
+  }
+}
