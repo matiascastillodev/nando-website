@@ -46,26 +46,33 @@
               alt="Nandó Apart Hotel"
           /></a>
         </div>
-        <div class="burgerNav">
-          <label class="burger" for="burger">
-            <input type="checkbox" id="burger" />
-            <span></span>
-            <span></span>
-            <span></span>
-          </label>
-        </div>
-        <ul class="navLinks">
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="#about-us">Nosotros</a></li>
-          <li><a href="#rooms">Habitaciones</a></li>
-          <li><a href="#facilities">Espacios</a></li>
-          <li><a href="#contact">Contacto</a></li>
-          <li>
+        <ul class="nav-menu">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Inicio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#about-us">Nosotros</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#rooms">Habitaciones</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#facilities">Espacios</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contacto</a>
+          </li>
+          <li class="nav-item">
             <a href="mailto:reservas@nandoaparthotel.com" class="mainBtn"
               >Reservar</a
             >
           </li>
         </ul>
+        <div class="ham-menu">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
       </nav>
     </section>
     <main>
@@ -327,8 +334,6 @@
         <p class="copy">&copy; <span id="year"></span> Nandó Apart Hotel.</p>
       </section>
     </footer>
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <script src="script.js"></script>
   </body>
 </html>
