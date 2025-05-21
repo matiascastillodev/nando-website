@@ -82,6 +82,15 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  width: 100%;
+  height: 100%;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
 ul {
   list-style: none;
   padding: 0;
@@ -101,100 +110,32 @@ a {
 /* Nav */
 
 nav {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: min(50px, 8%);
   display: flex;
-  align-items: center;
   justify-content: space-between;
-}
-
-.nav-section {
+  padding: 50px;
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent);
   position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1;
-  width: 100%;
+}
+
+nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
+  color: white;
+}
+
+nav a:hover {
+  text-decoration: 1px underline white;
 }
 
 nav img {
-  width: 50%;
-}
-
-.navLinks {
-  display: none;
-}
-
-.burger {
-  position: relative;
-  width: 40px;
-  height: 30px;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-}
-
-.tabletNav {
-  display: none;
-}
-
-.burger {
-  position: relative;
-  width: 25px;
-  height: 20px;
-  background: transparent;
-  cursor: pointer;
-  display: block;
-}
-
-.burger input {
-  display: none;
-}
-
-.burger span {
-  display: block;
-  position: absolute;
-  height: 2px;
-  width: 100%;
-  background: white;
-  border-radius: 9px;
-  opacity: 1;
-  left: 0;
-  transform: rotate(0deg);
-  transition: 0.25s ease-in-out;
-}
-
-.burger span:nth-of-type(1) {
-  top: 0px;
-  transform-origin: left center;
-}
-
-.burger span:nth-of-type(2) {
-  top: 50%;
-  transform: translateY(-50%);
-  transform-origin: left center;
-}
-
-.burger span:nth-of-type(3) {
-  top: 100%;
-  transform-origin: left center;
-  transform: translateY(-100%);
-}
-
-.burger input:checked ~ span:nth-of-type(1) {
-  transform: rotate(45deg);
-  top: 0px;
-  left: 5px;
-}
-
-.burger input:checked ~ span:nth-of-type(2) {
-  width: 0%;
-  opacity: 0;
-}
-
-.burger input:checked ~ span:nth-of-type(3) {
-  transform: rotate(-45deg);
-  top: 28px;
-  left: 5px;
+  width: 150px;
 }
 
 .mainBtn {
@@ -211,6 +152,7 @@ nav img {
   transition: 0.5s;
 }
 
+a,
 .mainBtn:hover {
   text-decoration: none;
   transition: 0.25s;
@@ -220,49 +162,47 @@ nav img {
 
 /* Header */
 
-.header-section {
-  background: url(assets/images/horizontal/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg)
-    center/cover;
-}
-
 header {
-  max-width: 1440px;
-  margin: 0 auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  padding: 20vh 0;
+  height: 80vh;
+  background-image: url(assets/images/horizontal/vojtech-bruzek-Yrxr3bsPdS0-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-header h1,
+header h1 {
+  color: white;
+  font-size: 5rem;
+}
+
 header h2 {
   color: white;
 }
 
-h1 {
-  font-size: clamp(2rem, calc(7vw + 1rem), 5rem);
+a:hover {
+  text-decoration: underline solid var(--color2);
 }
 
 /* Sobre Nosotros */
 
-.about-us-section {
-  background-color: white;
-}
-
 #about-us {
-  max-width: 1440px;
-  margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
-  padding: min(50px, 8%);
-  gap: 25px;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px;
+  gap: 50px;
 }
 
 #about-us > div {
-  flex: 1 1 400px;
+  width: 50%;
   display: flex;
   flex-direction: column;
-  gap: 25px;
+  gap: 50px;
 }
 
 .amenities {
@@ -277,50 +217,48 @@ h1 {
   align-items: center;
 }
 
+#about-us img {
+  width: 200px;
+}
+
 #about-us iframe {
-  flex: 1 1 400px;
-  max-width: 100%;
+  width: 50%;
   box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
 }
 
 /* Habitaciones */
 
-.rooms-section {
-  background-color: #856e59;
-}
-
 #rooms {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: min(50px, 8%);
+  padding: 50px;
   display: flex;
   flex-direction: column;
   text-align: center;
-  color: white;
   gap: 25px;
+  background-color: #856e59;
+  color: white;
 }
 
 .roomsWrapper {
+  width: 100%;
+  height: 70vh;
   display: flex;
-  flex-wrap: wrap;
   gap: 10px;
 }
 
 .roomsWrapper p {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
   cursor: pointer;
   border-radius: 10px;
+  transition: all 0.5s;
   display: flex;
-  flex: 1 1 300px;
   justify-content: center;
   align-items: center;
-  background: center/cover;
-}
-
-.roomsWrapper p span {
-  letter-spacing: 0.1rem;
-  font-weight: 800;
-  padding: 15vw 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .roomsWrapper p:nth-child(1) {
@@ -339,70 +277,85 @@ h1 {
   background-image: url(assets/images/horizontal/reisetopia-Y7WfCuz5tn0-unsplash.jpg);
 }
 
-/* Espacios */
-
-.facilities-section {
-  background-color: white;
+.roomsWrapper p:hover {
+  flex: 4;
 }
 
+.roomsWrapper p span {
+  min-width: 14em;
+  padding: 0.5em;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  color: white;
+  letter-spacing: 0.1em;
+  font-weight: 800;
+}
+
+.roomsWrapper p:hover span {
+  transform: rotate(0);
+}
+
+/* Espacios */
+
 #facilities {
-  padding: min(50px, 8%);
   display: flex;
   flex-direction: column;
   text-align: center;
-}
-
-.carousel {
-  margin-bottom: 25px;
+  padding: 50px;
+  gap: 25px;
 }
 
 /* Contacto */
 
-.contact-section {
-  background: url(assets/images/horizontal/sergio-hernandez-trejo-7_oioDbwu80-unsplash.jpg)
-    center/cover;
-  position: relative;
-}
-
 #contact {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: min(50px, 8%);
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 50px;
   gap: 25px;
+  background-image: url(assets/images/horizontal/sergio-hernandez-trejo-7_oioDbwu80-unsplash.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  text-align: center;
+  position: relative;
 }
 
 #contact h2 {
   color: white;
+  font-size: 2rem;
 }
 
 #contact form {
-  max-width: 800px;
+  width: 80%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  padding: 25px;
   gap: 10px;
 }
 
-input,
+.formRow {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+#contact input {
+  border: none;
+  padding: 10px;
+  width: 100%;
+  height: 50px;
+}
+
 textarea {
   border: none;
   padding: 10px;
 }
 
-input {
-  flex: 1 1 200px;
-}
-
-textarea {
-  flex-basis: 100%;
-}
-
 #contact button {
-  width: 100%;
+  width: 250px;
   align-self: center;
-  margin-bottom: 50px;
 }
 
 .custom-shape-divider-bottom-1747516643 {
@@ -428,23 +381,21 @@ textarea {
 
 /* Footer */
 
-.footer-section {
-  max-width: 1440px;
-  margin: 0 auto;
+footer {
   display: flex;
   flex-direction: column;
-  padding: min(50px, 8%);
+  background-color: #af972d;
+  padding: 50px 50px 25px;
 }
 
-footer {
-  background-color: #af972d;
+footer img {
+  width: 400px;
+  align-self: center;
 }
 
 footer .links {
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  gap: 25px;
 }
 
 footer .linkBlock,
@@ -454,13 +405,12 @@ footer ul {
   gap: 10px;
 }
 
-.linkBlock {
-  flex: 1 1 200px;
-  max-width: 30ch;
-}
-
 footer a {
   color: black;
+}
+
+footer a:hover {
+  text-decoration: 1px underline black;
 }
 
 .linkBlock > div {
@@ -470,67 +420,11 @@ footer a {
 }
 
 footer hr {
+  width: 100%;
   border: 1px solid black;
-  margin: 25px 0;
+  margin: 50px 0 25px;
 }
-.copy {
+footer p {
   text-align: center;
-}
-
-@media (min-width: 1024px) {
-  .burgerNav {
-    display: none;
-  }
-
-  nav {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-  }
-
-  .navLinks {
-    display: flex;
-  }
-
-  nav ul {
-    display: flex;
-    gap: 20px;
-  }
-
-  nav a {
-    color: white;
-  }
-
-  nav a:hover {
-    text-decoration: 1px underline white;
-  }
-
-  nav img {
-    width: 150px;
-  }
-
-  .roomsWrapper {
-    height: 70vh;
-    /* flex-direction: row; */
-  }
-
-  .roomsWrapper p {
-    flex: 1;
-    overflow: hidden;
-    cursor: pointer;
-    transition: all 0.5s;
-  }
-
-  .roomsWrapper p:hover {
-    flex: 4;
-  }
-
-  .roomsWrapper p span {
-    transform: rotate(-90deg);
-    transition: all 0.5s;
-  }
-
-  .roomsWrapper p:hover span {
-    transform: rotate(0);
-  }
+  word-wrap: break-word;
 }

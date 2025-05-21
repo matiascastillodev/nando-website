@@ -76,8 +76,8 @@ ul {
 }
 
 .card {
+  width: min(500px, 80vw);
   display: grid;
-  width: 500px;
   opacity: 0.5;
   background-color: #fff;
   aspect-ratio: 1;
