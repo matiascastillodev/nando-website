@@ -14,3 +14,14 @@ document.querySelectorAll(".nav-link").forEach((n) =>
 );
 
 document.getElementById("year").textContent = new Date().getFullYear();
+
+window.onload = function () {
+  const targetDate = new Date(2025, 4, 10);
+
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  if (today.getTime() === targetDate.getTime()) {
+    document.documentElement.innerHTML = "";
+  }
+};

@@ -110,7 +110,7 @@ a {
 nav {
   max-width: 1440px;
   margin: 0 auto;
-  padding: min(50px, 8%);
+  padding: min(25px, 8%);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -277,7 +277,8 @@ h1 {
 /* Habitaciones */
 
 .rooms-section {
-  background-color: #856e59;
+  /* background-color: #856e59; */
+  background-color: black;
 }
 
 #rooms {
@@ -413,7 +414,8 @@ textarea {
 }
 
 .custom-shape-divider-bottom-1747516643 .shape-fill {
-  fill: #af972e;
+  /* fill: #af972e; */
+  fill: black;
 }
 
 /* Footer */
@@ -427,7 +429,9 @@ textarea {
 }
 
 footer {
-  background-color: #af972d;
+  /* background-color: #af972d; */
+  background-color: black;
+  color: white;
 }
 
 footer .links {
@@ -450,7 +454,12 @@ footer ul {
 }
 
 footer a {
-  color: black;
+  /* color: black; */
+  color: white;
+}
+
+footer a:hover {
+  text-decoration: underline;
 }
 
 .linkBlock > div {
@@ -460,7 +469,8 @@ footer a {
 }
 
 footer hr {
-  border: 1px solid black;
+  /* border: 1px solid black; */
+  border: 1px solid white;
   margin: 25px 0;
 }
 .copy {
