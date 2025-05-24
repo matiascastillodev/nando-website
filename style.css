@@ -64,14 +64,6 @@ h6 {
   isolation: isolate;
 }
 
-/* Variables */
-
-:root {
-  --color1: #d9bf00;
-  --color2: #e3cf40;
-  --color3: #a39000;
-}
-
 /* Global */
 
 * {
@@ -171,7 +163,7 @@ nav img {
     top: -100%;
     gap: 0;
     flex-direction: column;
-    background-color: #856e59;
+    background-color: black;
     width: 100%;
     text-align: center;
     transition: 0.3s;
@@ -191,7 +183,7 @@ nav img {
   padding: 10px 30px;
   border-radius: 10px;
   border: none;
-  background-color: var(--color1);
+  background-color: #d9bf00;
   color: black;
 }
 
